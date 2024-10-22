@@ -132,7 +132,7 @@ const Test: React.FC<{ courseroute: string }> = ({ courseroute }) => {
       <div>
         <p className="text-lg mb-4">{course}</p>
       </div>
-      <div>
+      <div className='mb-20'>
       <form onSubmit={handleSubmit} className="space-y-4">
       <Textarea 
         value={inputText}

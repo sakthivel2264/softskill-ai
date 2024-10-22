@@ -16,7 +16,7 @@ const Assessment: React.FC<AssessmentProps> = ({ courseroute }) => {
       <div>
         <Course courseroute={`${courseroute}`}/>
       </div>
-      <div className='m-4 flex justify-end'>
+      <div className='m-4 flex justify-end mb-20'>
         <Link href={`/course/${courseroute}/${courseroute}test`}>
         <Button>Take Test</Button>
         </Link>

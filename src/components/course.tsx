@@ -59,7 +59,7 @@ const Course: React.FC<{ courseroute: string }> = ({ courseroute }) => {
   return (
     <div className="p-4 px-8">
       <h1 className='my-4 text-xl font-bold underline'>{courseroute} Course</h1>
-      <div>
+      <div className='mb-20'>
         <p className="text-lg mb-4">{course}</p>
       </div>
     </div>
