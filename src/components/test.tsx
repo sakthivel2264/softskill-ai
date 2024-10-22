@@ -21,7 +21,7 @@ const Test: React.FC<{ courseroute: string }> = ({ courseroute }) => {
   const [results, setResults] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [inputText, setInputText] = useState<string>("");
-  const { setValue, value } = useStringStore();
+  const { setValue } = useStringStore();
   
 
   // Function to call the Gemini AI API

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client"
 
 import React, { useEffect, useState } from 'react';
 import Header from './header'
@@ -14,7 +15,7 @@ const Results: React.FC<{ resultsroute: string }> = ({resultsroute}) => {
   
 
   // Function to call the Gemini AI API
-  const fetchCourseContent = async () => {
+  const fetchCourseContent = async (resultsroute: string) => {
     try {
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.NEXT_PUBLIC_GEMINI_API_KEY}`, {
         method: 'POST',
@@ -26,7 +27,7 @@ const Results: React.FC<{ resultsroute: string }> = ({resultsroute}) => {
             {
               parts: [
                 {
-                  text: `Using this ${value} data give a feedback and marks and tips to improve`,
+                  text: `Using this ${value} data give a feedback and marks and tips to improve and this is the topic ${resultsroute}`,
                 },
               ],
             },
@@ -53,7 +54,7 @@ const Results: React.FC<{ resultsroute: string }> = ({resultsroute}) => {
 
   useEffect(() => {
     if (resultsroute) {
-      fetchCourseContent(); // Fetch course content when the component mounts or when courseroute changes
+      fetchCourseContent(resultsroute); // Fetch course content when the component mounts or when courseroute changes
     }
   }, [resultsroute]);
 
